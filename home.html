@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDI</title>
+
+  <!-- Préconnecte aux polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="health-timer-container">
+      <div class="health-bar player">
+        <div class="health-bar-background"></div>
+        <div id="playerHealth" class="health-bar-fill"></div>
+      </div>
+      <div id="timer" class="timer-box"></div>
+      <div class="health-bar enemy">
+        <div class="health-bar-background"></div>
+        <div id="enemyHealth" class="health-bar-fill"></div>
+      </div>
+    </div>
+    <div id="displayText" class="game-status">Tie</div>
+    <canvas></canvas>
+  </div>
+
+  <!-- Inclusion de scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #034b73, #7ccaf6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Conteneur principal */
+  .container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-home: 1;
+  }
+  
+  /* Texte central */
+  .text-box {
+    position: relative;
+    z-home: 2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  .highlight {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Sprites des personnages */
+  .sprite {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: auto;
+    z-home: 1;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .left-sprite {
+    left: -90px; /* Position sur la gauche */
+  }
+  
+  .right-sprite {
+    right: -90px; /* Position sur la droite */
+  }
+  
+  /* Animation pour un effet de "flottement" */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  

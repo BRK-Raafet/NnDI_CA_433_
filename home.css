@@ -1,0 +1,167 @@
+/* Style global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  /* Corps de la page */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+  }
+  
+  /* Conteneur principal */
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+  }
+  
+  /* Conteneur pour les barres de santé et le timer */
+  .health-timer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  /* Style commun aux barres de santé */
+  .health-bar {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .health-bar.player {
+    background: linear-gradient(90deg, #ff4747, #ff7474);
+  }
+  
+  .health-bar.enemy {
+    background: linear-gradient(90deg, #47aaff, #74d0ff);
+  }
+  
+  .health-bar-background {
+    background-color: #444;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .health-bar-fill {
+    position: absolute;
+    background: #77dd77;
+    height: 100%;
+    width: 100%; /* Dynamique via JS */
+    transition: width 0.3s ease-in-out;
+    z-home: 1;
+  }
+  
+  /* Timer */
+  .timer-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    min-width: 60px;
+    height: 10%;
+    max-height: 80px;
+    background: radial-gradient(circle, #000 0%, #333 100%);
+    color: #fff;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Texte d'état du jeu */
+  #displayText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    font-size: 2rem;
+    color: #ffd700;
+    text-align: center;
+    visibility: hidden; /* Affiché dynamiquement via JS */
+    animation: blink 1s infinite alternate;
+  }
+  
+  /* Effet de clignotement */
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Canvas */
+  canvas {
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #202020, #2d2d2d);
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .health-timer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .health-bar {
+      width: 90%;
+    }
+  
+    .timer-box {
+      width: 15%;
+      font-size: 1.2rem;
+    }
+  
+    #displayText {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .health-timer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .health-bar {
+      width: 100%;
+    }
+  
+    .timer-box {
+      width: 20%;
+      font-size: 1rem;
+    }
+  
+    #displayText {
+      font-size: 1.2rem;
+    }
+  }

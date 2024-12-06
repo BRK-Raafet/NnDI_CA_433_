@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konami Code Secret</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <img src="./img/gentil/Idle.png" alt="Captain Water" class="sprite left-sprite">
+    <div class="text-box">
+      <h1>Bravo !</h1>
+      <p class="message">
+        Vous avez découvert notre secret en utilisant le célèbre <strong>Konami Code</strong>. 
+        Attention, vous allez maintenant affronter l'ennemi le plus redoutable de notre planète : 
+        <span class="highlight">M. Carbone</span>. Cet adversaire implacable détruit nos océans et ne 
+        relâche jamais ses victimes, même dans l’au-delà. <br><br>
+        Heureusement, vous pouvez compter sur l’aide précieuse de <span class="highlight">Captain Water</span> 
+        pour le combattre. Mais restez sur vos gardes : même après l’avoir vaincu, 
+        <span class="highlight">M. Carbone</span> est une force maléfique qui hantera les générations à venir. <br><br>
+        Réunissez tout votre courage et refaites le <strong>Konami Code</strong> pour engager ce terrible affrontement. 
+        Bonne chance, héros !
+      </p>
+    </div>
+    <img src="./img/cpt/Idle.png" alt="M. Carbone" class="sprite right-sprite">
+  </div>
+
+  <!-- Script du Konami Code -->
+  <script>
+    let sequence = [];
+    const codeKonami = [
+      "ArrowUp",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+      "b",
+      "a",
+    ];
+    const redirectUrl = "home.html"; // Redirection vers index.html
+
+    document.addEventListener("keydown", (event) => {
+      sequence.push(event.key);
+
+      // Garder la séquence à la taille du code Konami
+      if (sequence.length > codeKonami.length) {
+        sequence.shift();
+      }
+
+      // Vérifier si la séquence correspond au code Konami
+      if (JSON.stringify(sequence) === JSON.stringify(codeKonami)) {
+        window.location.href = redirectUrl; // Redirige vers index.html
+      }
+    });
+  </script>
+</body>
+</html>
